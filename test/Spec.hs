@@ -1,2 +1,11 @@
+import Test.Hspec
+import Test.QuickCheck
+import Control.Exception (evaluate)
+
 main :: IO ()
-main = putStrLn "Test suite not yet implemented"
+main = hspec $ do
+  describe "thing" $ do
+    it "works" $ do
+      3 `shouldBe` 3
+
+

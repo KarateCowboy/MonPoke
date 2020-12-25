@@ -20,7 +20,9 @@ data MonCmd = Attack
 
 type MonPoke = (TeamName, Name, HP, AP)
 
-data Team = Team { name :: Name, roster :: [MonPoke], defeated :: Bool }
+data Team = Team { name :: Name, roster :: [MonPoke], defeated :: Bool } deriving (Show, Eq)
+
+data State = State { teams :: (Team, Team)       } deriving (Show, Eq)
 
 parseCmd :: String -> MonCmd
 parseCmd cmdline = 
